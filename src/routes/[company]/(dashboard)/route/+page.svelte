@@ -1,0 +1,19 @@
+<script>
+	import Route from "../../components/endPointModules/route/route.svelte";
+	
+	let {
+	  onToggleSidebar,
+	} = $props();
+	
+	
+		let sidebarToggle = true;
+
+// Function to toggle sidebar visibility
+const toggleSidebar = () => {
+    sidebarToggle = !sidebarToggle;
+    onToggleSidebar();
+    };
+
+</script>
+
+<Route onToggleSidebar={toggleSidebar}/>
