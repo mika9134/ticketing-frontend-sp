@@ -6,7 +6,7 @@
 	const tableEndpoint = `${host}subscription/get-subscriptions`;
 	const table_id_data = `${host}subscription/get-subscription/`;
 	const searchEndpoint = `${host}subscription/search`;
-	const formEndpoint = `${host}subscription/subscription-form/`;
+	const formEndpoint = `${host}subscription/subscription-form`;
 
 	const submitUrl = `${host}subscription/create-subscription`;
 	const updateUrl = `${host}subscription/update-subscription/`;
