@@ -3,14 +3,14 @@
 	import Table from '../../tables/table.svelte';
 	import Header from '../../header/header.svelte';
 
-	const tableEndpoint = `${host}/provider/subscription/get-subscriptions`;
-	const table_id_data = `${host}/provider/subscription/get-subscription/`;
-	const searchEndpoint = `${host}/provider/subscription/search`;
-	const formEndpoint = `${host}/provider/subscription/subscription-form`;
+	const tableEndpoint = `${host}provider/subscription/get-subscriptions`;
+	const table_id_data = `${host}provider/subscription/get-subscription/`;
+	const searchEndpoint = `${host}provider/subscription/search`;
+	const formEndpoint = `${host}provider/subscription/subscription-form`;
 
-	const submitUrl = `${host}/provider/subscription/create-subscription`;
-	const updateUrl = `${host}/provider/subscription/update-subscription/`;
-	const deleteUrl = `${host}/provider/subscription/delete-subscription`;
+	const submitUrl = `${host}provider/subscription/create-subscription`;
+	const updateUrl = `${host}provider/subscription/update-subscription/`;
+	const deleteUrl = `${host}provider/subscription/delete-subscription`;
 	const table_name = 'Subscription';
 
 	let button_names = [];
