@@ -91,7 +91,7 @@ export async function token_refresh() {
 
 export async function login_superadmin(username, password) {
 
-  const apiUrl = `${host_super}login`
+  const apiUrl = `${host_super}provider/login`
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {

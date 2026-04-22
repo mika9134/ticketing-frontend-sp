@@ -107,7 +107,7 @@
 
   // Auto-slide every 5 seconds
   onMount(async () => {
-    const check_url = `${host_super}has-superadmin`
+    const check_url = `${host_super}provider/has-superadmin`
     const isRegistered = await fetchForm(check_url, "");
     console.log("isRegistered", isRegistered);
     

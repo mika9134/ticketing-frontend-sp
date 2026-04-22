@@ -141,7 +141,7 @@
 			}
 		} else {
       
-      const check_url = `${host_super}has-superadmin`
+      const check_url = `${host_super}provider/has-superadmin`
       const isRegistered = await fetchForm(check_url, "");
 
 			if (access_token) {
