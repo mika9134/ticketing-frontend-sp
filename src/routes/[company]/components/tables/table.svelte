@@ -948,6 +948,11 @@
 	//     tooltipData = null;
 	//     tooltipLoading = false;
 	// }
+
+    function isImageUrl(value) {
+        return typeof value === "string" &&
+            (value.startsWith("http://") || value.startsWith("https://")) && value.includes('/static/');
+    }
 </script>
 
 <div class="m-1 w-full">
@@ -1648,7 +1653,7 @@
 														}
 													}}>N/A</td
 												>
-											{:else if typeof row[col] === 'string' && row[col].startsWith('data:image')}
+											{:else if typeof row[col] === 'string' && (row[col].startsWith('data:image') || isImageUrl(row[col]))}
 												<!-- Apply special styling to display images column -->
 												<td
 													class={row['hidden'] && row['hidden'].length > 0
