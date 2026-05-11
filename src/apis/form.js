@@ -161,7 +161,7 @@ export async function deleteItem(delete_entry_url, token, data={}) {
 export async function signUp(formData) {
     // const apiUrl = `${api_address}auth/register-superadmin`;
     try {
-        const response = await fetch(`${host_super}create-superadmin`, {
+        const response = await fetch(`${host_super}provider/create-superadmin`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
