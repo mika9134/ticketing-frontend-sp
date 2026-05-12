@@ -10,12 +10,12 @@ let company_name = getCompanyName();
 
 // development environment
 
-  export let host = `https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/${company_name}/`
+  export let host = `https://bluesparksfa.bluespark.et:8088/${company_name}/`
    export function getHost() {
-     host = `https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/${getCompanyName()}/`;
+     host = `https://bluesparksfa.bluespark.et:8088/${getCompanyName()}/`;
      // console.log("commm", getCompanyName())
    }
- export const host_super = 'https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/'
+ export const host_super = 'https://bluesparksfa.bluespark.et:8088/'
 
 // testing environment
 //export let host = `http://127.0.0.1:8000/${company_name}/`

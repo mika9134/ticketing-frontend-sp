@@ -55,9 +55,9 @@
 
 	  if(window.location.pathname == "/")
 	  {
-	  //companyName.set("provider");
+	  companyName.set("provider");
 	  
-	  //company_name = "provider";
+	  company_name = "provider";
 	  }
 	  
 		let access_token = getAccessToken();
@@ -108,7 +108,7 @@
     if(getRefreshToken() == "" || (getRefreshToken() && getRefreshToken() != "" && Date.now() >= (JSON.parse(atob(getRefreshToken().split('.')[1]))).exp * 1000))
     {
        if(company_name !== "provider") {
-       goto(`/${company_name}/signin`);
+       goto(`/signin`);
        }
        else {
        goto('/signin');
@@ -127,7 +127,7 @@
 			} else {
 				if($page.params.company != "provider")
     	 {
-       goto(`/${$page.params.company}/signin`);    	 
+       goto(`/signin`);    	 
     	 }
     	 else {
     	 goto(`/signin`);    	
@@ -137,7 +137,7 @@
 			if (access_token) {
 				goto(`/${company_name}/${current_module}`);
 			} else {
-				goto(`/${company_name}/signin`);
+				goto(`/signin`);
 			}
 		} else {
       
@@ -168,7 +168,7 @@
 		setTokens("","");
 		if($page.params.company != "provider")
     	 {
-       goto(`/${$page.params.company}/signin`);    	 
+       goto(`/signin`);    	 
     	 }
     	 else {
     	 goto(`/signin`);    	

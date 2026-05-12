@@ -3,7 +3,7 @@
 	let { message = $bindable(), isNotify = false, icon = "/notify.svg" } = $props();
 
 	$effect(() => {
-		if (message) {
+		if (message && typeof message == "string") {
 			// Remove HTML tags for accurate character counting
 			const plainText = message.replace(/<[^>]*>?/gm, '');
 			
