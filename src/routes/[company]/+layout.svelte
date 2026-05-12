@@ -14,7 +14,7 @@
   
   function handleSignOut() {
 		setTokens("","");
-    goto(`/${$page.params.company}/signin`);
+    goto(`/signin`);
 	}
 </script>
 
