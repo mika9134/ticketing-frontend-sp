@@ -53,7 +53,7 @@ export async function login(username, password) {
 }
 
 export async function token_refresh() {
-  const apiUrl = `${host}account/refresh`;
+  const apiUrl = `${host}account/refresh/`;
   // const apiUrl = `${host_super}login`
   let token = getRefreshToken();
 
