@@ -8,7 +8,7 @@ let span;
 let api_address = host;
 
 var lastRefresh = 0;
-var delay = 60;
+var delay = 6000;
 
 /**
  * Login API call
@@ -59,8 +59,8 @@ export async function token_refresh() {
 
   if (lastRefresh >= (Date.now() - delay))
     return true;
+    
   lastRefresh = Date.now();
-
 
   const response = await fetch(apiUrl, {
     method: 'POST',
