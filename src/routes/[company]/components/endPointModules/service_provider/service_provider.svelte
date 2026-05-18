@@ -10,7 +10,7 @@
 	const tableEndpoint = `${host}provider/get-tenants`;
 	const table_id_data = `${host}provider/get-tenant/`;
 	const searchEndpoint = `${host}provider/search`;
-	const formEndpoint = `${host}provider/tenant-form`;
+	const formEndpoint = `${host}provider/tenant-form/`;
 	const submitUrl = `${host}provider/create-tenant`;
 	const updateUrl = `${host}provider/update-tenant`;
 	const deleteUrl = `${host}provider/delete-tenant`;
