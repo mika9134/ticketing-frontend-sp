@@ -6,7 +6,7 @@
 	const tableEndpoint = `${host}get-scope-groups`;
 	const table_id_data = `${host}get-scope-group/`;
 	const searchEndpoint = `${host}search`; 
-	const formEndpoint = `${host}scope-group-form`;
+	const formEndpoint = `${host}scope-group-form/`;
 	const submitUrl = `${host}create-scope-group`;
 	const updateUrl = `${host}update-scope-group`;
 	const deleteUrl =`${host}delete-scope-group`;

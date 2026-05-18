@@ -9,7 +9,7 @@
 	const formEndpoint = `${host}provider/subscription/subscription-form`;
 
 	const submitUrl = `${host}provider/subscription/create-subscription`;
-	const updateUrl = `${host}provider/subscription/update-subscription/`;
+	const updateUrl = `${host}provider/subscription/update-subscription`;
 	const deleteUrl = `${host}provider/subscription/delete-subscription`;
 	const table_name = 'Subscription';
 

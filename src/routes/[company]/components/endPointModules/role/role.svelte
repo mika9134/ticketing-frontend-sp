@@ -8,7 +8,7 @@
 	const tableEndpoint = `${host}role/get-roles`;
 	const searchEndpoint = `${host}role/search`;
 	const tableEndpointById = `${host}role/get-role/`;
-	const formEndpoint = `${host}role/role-form`;
+	const formEndpoint = `${host}role/role-form/`;
 	const submitUrl = `${host}role/create-role`;
 	const updateUrl = `${host}role/update-role`;
 	const deleteUrl = `${host}role/delete-role`;
