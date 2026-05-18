@@ -15,7 +15,7 @@
                 'client_id': '',
                 'client_secret': '',
             };
-            const response = await fetch('http://172.10.10.202:8000/auth/login', {
+            const response = await fetch('http://172.10.10.202:8000/auth/login/', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

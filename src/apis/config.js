@@ -1,34 +1,25 @@
-import { getCompanyName} from "../stores/companyStore";
+import { getCompanyName } from "../stores/companyStore";
 import { getAccessToken } from "../stores/tokenStore";
 
 let access_token = getAccessToken();
 let company_name = getCompanyName();
 
-// Define the base API host
-// export const host = 'http://172.10.10.202:8000/';
-// export const host = 'https://sfa.enablertech.et/'
+// Defining the options for the hosts
+const AZURE_ENVIRONMENT = 'https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/${company_name}/';
+const EXPERIMENTAL_ENVIRONMENT = 'https://bluesparksfa.bluespark.et:8088/';
+const LOCAL_ENVIRONMENT = 'http://127.0.0.1:8001/';
+const PUBLIC_IP_LOCAL_ENVIRONMENT = 'http://172.10.10.149:8001/';
 
-// development environment
+// Picking the right backend host
+const BACKEND_HOST = AZURE_ENVIRONMENT;
+// const BACKEND_HOST = LOCAL_ENVIRONMENT;
 
-  export let host = `https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/${company_name}/`
-   export function getHost() {
-     host = `https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/${getCompanyName()}/`;
-     // console.log("commm", getCompanyName())
-   }
- export const host_super = 'https://bs-sfa-acc-ne-apigw-aca01.ambitiousflower-d54c051b.northeurope.azurecontainerapps.io/'
+// Setting up the host and super host
+export let host = `${BACKEND_HOST}${company_name}/`
+export function getHost() {
+  host = `${BACKEND_HOST}${getCompanyName()}/`;
+}
+export const host_super = `${BACKEND_HOST}`
 
-// testing environment
-//export let host = `http://127.0.0.1:8000/${company_name}/`
-//export function getHost() {
-// host = `http://127.0.0.1:8000/${getCompanyName()}/`;
-//}
-//export const host_super = 'http://127.0.0.1:8000/'
-//export let host = `http://127.0.0.1:8002/${company_name}/`;
-//export function getHost() {
-//host = `http://127.0.0.1:8002/${getCompanyName()}/`;
-//}
-//export const host_super = 'http://127.0.0.1:8002/'
-
-// Define the token for API access
+// Export the token for API access
 export const token = access_token;
-
