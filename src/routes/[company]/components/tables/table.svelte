@@ -806,7 +806,7 @@
 							continue;
 						}
 						if (
-							((columnTypes[column] == 'text' || columnTypes[column] == 'hidden') &&
+							((columnTypes[column] == 'text' || columnTypes[column] == 'hidden' || columnTypes[column] == "textarea") &&
 								typeof form_data[columnNames[column]] === 'string') ||
 							form_data[columnNames[column]] === null
 						) {
@@ -948,7 +948,7 @@
 	//     tooltipData = null;
 	//     tooltipLoading = false;
 	// }
-
+	
     function isImageUrl(value) {
         return typeof value === "string" &&
             (value.startsWith("http://") || value.startsWith("https://")) && value.includes('/static/');
@@ -1900,19 +1900,31 @@
 											<div
 												class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-2 flex-shrink-0"
 											>
-												<!-- {#if tooltip_enabled && !hide_tooltip_parent && tooltip_data}
-												<div 
-													class="cursor-help p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-													onmouseenter={(e) => handleMouseEnter(e, row, i)}
-													onmousemove={handleMouseMove}
-													onmouseleave={handleMouseLeave}
-												>
-													<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path d="M12 11V16M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21ZM12.0498 8V8.1L11.9502 8.1002V8H12.0498Z" stroke="#42A5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-													</svg>
-												</div>
-											{/if} -->
 
+
+												{#if row.tooltip_data && row.tooltip_data.length > 0}
+													<div class="has-tooltip relative flex items-center cursor-help p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+														<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M12 11V16M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21ZM12.0498 8V8.1L11.9502 8.1002V8H12.0498Z" stroke="#42A5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+														</svg>
+
+														<div class="tooltip_pop bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl rounded-lg p-3 w-max min-w-[140px] max-w-xs bottom-[120%] right-1/2 translate-x-1/2 z-[1000] text-sm text-gray-800 dark:text-gray-200">
+															<div class="absolute w-3 h-3 bg-white dark:bg-gray-800 border-b border-r border-gray-200 dark:border-gray-700 rotate-45 -bottom-1.5 left-1/2 -translate-x-1/2"></div>
+															
+															
+															<div class="font-bold border-b border-gray-100 dark:border-gray-700 pb-1 mb-2 text-left text-gray-900 dark:text-white">
+																Approvers
+															</div>
+															<ul class="list-disc pl-5 space-y-1 text-left text-xs">
+																{#each row.tooltip_data as approver}
+																	<li>{approver}</li>
+																{/each}
+															</ul>
+														</div>
+													</div>
+												{/if}
+
+											
 												{#each buttons_names as button_name, i}
 													{#if button_name != '' && buttons_show(row, button_name) && !hide_buttons_parent}
 														<button

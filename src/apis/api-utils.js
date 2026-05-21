@@ -17,7 +17,7 @@ var delay = 6000;
  * @returns {Promise<{access_token: string, refresh_token: string}>} - The tokens
  */
 export async function login(username, password) {
-  const apiUrl = `${host}account/login`;
+  const apiUrl = `${host}account/login/`;
   // const apiUrl = `${host_super}login`
 
   const response = await fetch(apiUrl, {
@@ -91,7 +91,7 @@ export async function token_refresh() {
 
 export async function login_superadmin(username, password) {
 
-  const apiUrl = `${host_super}provider/login`
+  const apiUrl = `${host_super}provider/login/`
   const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
