@@ -11,7 +11,7 @@ const LOCAL_ENVIRONMENT = 'http://127.0.0.1:8001/';
 const PUBLIC_IP_LOCAL_ENVIRONMENT = 'http://172.10.10.149:8001/';
 
 // Picking the right backend host
-const BACKEND_HOST = AZURE_ENVIRONMENT;
+const BACKEND_HOST = EXPERIMENTAL_ENVIRONMENT;
 // const BACKEND_HOST = LOCAL_ENVIRONMENT;
 
 // Setting up the host and super host
