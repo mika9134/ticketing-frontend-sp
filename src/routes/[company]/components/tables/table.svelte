@@ -951,7 +951,7 @@
 	
     function isImageUrl(value) {
         return typeof value === "string" &&
-            (value.startsWith("http://") || value.startsWith("https://")) && value.includes('/static/');
+            (value.startsWith("http://") || value.startsWith("https://")) && (value.includes('.png') || value.includes('.jpeg') || value.includes('.jpg') | value.includes('.webp'));
     }
 </script>
 
